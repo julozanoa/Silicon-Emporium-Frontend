@@ -5,35 +5,14 @@
 <body style="background-color:#333440;">
     <div class = "container">
         <header class = "container">
-            <nav>
-                <ul>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+            <nav class="navbar navbar-expand-sm-bg-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                 </ul>
             </nav>
         </header>
-        <section>
-            <article class = "logo">
-                <img src="./assets/logo.png" alt="logo">
-            </article>
-            <article>
-                <h1></h1>
-            </article>
-            <article class="textop">
-                <h1>
-                    ¿Que deseas buscar hoy?                   
-                </h1>
-            </article>
-            <article class= "search">
-                <div class="search__box">
-                    <input type="text">
-                </div>
-            </article>
-            <article class="textop2">
-                <h1>
-                    Ingrese el producto que desea buscar                   
-                </h1>
-            </article>
-        </section>
+        <router-outlet></router-outlet>
     </div>
 </body>

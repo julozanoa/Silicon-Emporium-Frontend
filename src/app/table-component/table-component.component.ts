@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { item } from '../Model';
+import { ScrapperService } from '../Services/scrapper.service';
 
 @Component({
   selector: 'app-table-component',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponentComponent implements OnInit {
 
-  constructor() { }
+  items!: item[];
+  constructor(
+    private scrapperService: ScrapperService,
+  ) { }
 
   ngOnInit(): void {
+    this.loadPDTProducts();
   }
+
+  loadPDTProducts(): void {
+    this.scrapperService
+      .getAllItems('AMD Ryzen 5600')
+      .subscribe((pdtProducts) => {
+        this.items = pdtProducts;
+        console.log(this.items)
+      });
+  }
+
+
 
 }

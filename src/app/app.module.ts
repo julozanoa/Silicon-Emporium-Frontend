@@ -12,6 +12,8 @@ import { TableComponentComponent } from './table-component/table-component.compo
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
@@ -34,7 +36,9 @@ const appRoutes:Routes=[
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    HttpClientModule,
     FormsModule,
+    MatTableModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

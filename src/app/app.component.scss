@@ -1,6 +1,10 @@
 
+
+html, body { height: 100%; }
+
 body{
     font-family: Arial, Helvetica, sans-serif;
+    height: 53%
 }
 
 a{
@@ -45,6 +49,10 @@ header nav ul li:nth-child(3) a{
     margin-right: 15px;
     font-size: 18px;
     color: #F1C40F;
+}
+
+.mat-typography{
+     height: 73%; 
 }
 
 

@@ -1,35 +1,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="background-color:#333440;">
-    <div class = "container">
-        <section>
-            <article class = "logo">
-                <img src="./assets/logo.png" alt="logo">
-            </article>
-            <article>
-                <h1>
-                    <br>
-                </h1>
-            </article>
-            <article class="textop">
-                <h1>
-                    ¿Que deseas buscar hoy?                
-                </h1>
-                <br>
-            </article>
-            <article class= "search">
-                <div class="search__box">
-                    <input type="text">
-                </div>
-            </article>
-            <article class="textop2">
-                <h1>
-                    Ingrese el producto que desea buscar               
-                </h1>
-            </article>
-        </section>
-    </div>
-</body>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
+</head>
+
+
+<div class="container">
+    <section>
+        <article class="logo">
+            <img src="./assets/logo.png" alt="logo">
+        </article>
+        <article>
+            <h1>
+                <br>
+            </h1>
+        </article>
+        <article class="textop">
+            <h1>
+                ¿Que deseas buscar hoy?
+            </h1>
+            <br>
+        </article>
+        <article class="search" style="padding-top: 60px;">
+            <div class="search__box">
+                <input type="text" [(ngModel)]="itemSearch"  style=" text-align: center" placeholder=' E.g: "Intel Core i7 12th gen" '>
+            </div>
+            <button mat-raised-button (click)="loadProducts()" style="margin:5% ;"> Buscar</button>
+        </article>
+        <article class="textop2">
+        </article>
+    </section>
+</div>
+
+
+<table class="table" style="margin-top: 30px;" *ngIf="items.length > 0">
+    <thead>
+        <tr style="text-align:center; position: static; ">
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Pagina</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of items">
+
+            <td>{{data.title}}</td>
+            <td>{{data.price | currency}}</td>
+            <td>{{data.source}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+<footer>
+    <div style="padding:2%;">
+            <p style="font-size:12px; position: relative; text-align: center;">Hecho con amor by firework team ❤️❤️❤️</p>
+    </div>
+</footer>

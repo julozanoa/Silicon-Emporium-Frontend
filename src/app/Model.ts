@@ -10,4 +10,9 @@ export interface item {
     name:string;
     surname:string;
   }
+
+  export interface Login {
+    username:string; 
+    password:string;
+  }
   

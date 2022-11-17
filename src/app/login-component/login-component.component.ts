@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from '../Model';
+import { RegisterService } from '../Services/register.service';
 
 @Component({
   selector: 'app-login-component',
@@ -8,20 +10,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponentComponent implements OnInit {
 
-  username!:string;
-  password!:string;
-  window: any;
+  logindata:Login = {
+    username: '',
+    password: ''
+  }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
 
   login(){
-    console.log(this.username)
-    console.log(this.password)
-    localStorage.setItem('username',this.username)
+  
+
+    localStorage.setItem('username',"aaa")
     this.router.navigate([''])
     .then(() => {
       window.location.reload();

@@ -16,8 +16,9 @@
                     <li><a href="/register">Register</a></li>
                     <li><a href="https://www.paypal.com/donate/?hosted_button_id=S2MHGN49RVBTJ">Donate</a></li>
                 </ul>
-                <ul class="nav-links" *ngIf="username">
-                   <p style="color:aliceblue;" > Username: {{username}} </p>
+                <ul class="nav-links" *ngIf="username" style="position:absolute; left:7%;">
+                  <i class="far fa-user fa-2x" style="color:#f1c40f;"></i>
+                   <p style="color: #f1c40f; position: relative; left: -35%;" > Usuario: {{username}}  </p>
                 </ul>
             </nav>
         </div>

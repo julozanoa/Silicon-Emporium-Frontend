@@ -1,53 +1,51 @@
-
-
-html, body { height: 100%; }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+}
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    height: 53%
+    height: 100%;
+    background-image: url("./svg/bg.svg");
+    width: 100%;
+    margin: 0;
+    border: 0;
 }
 
-a{
-    text-decoration: none;
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
 }
 
-ul{
+
+.header .nav-links {
     list-style: none;
 }
 
-header{
-    width: 100%;
-    height: 63px;
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
 }
 
-header nav{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.header .nav-links li:hover{
+    transform: scale(1.1);
 }
 
-header nav ul{
-    width: 250px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+.header .nav-links li a{
+    font-size: 700;
+    color: #eceff1;  
+    text-decoration: none;
 }
-
-header nav ul li a{
-    margin-right: 5px;
-    font-size: 13px;
-    color: #F1C40F;
-    display: flex;
-}
-
-header nav ul li:nth-child(1) a,
-header nav ul li:nth-child(2) a,
-header nav ul li:nth-child(3) a{
-    margin-left: 10px;
-    margin-right: 15px;
-    font-size: 18px;
+.header .nav-links li a:hover{
     color: #F1C40F;
 }
 
@@ -57,3 +55,32 @@ header nav ul li:nth-child(3) a{
 
 
 
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./svg/footer.svg");
+    position: absolute;
+    bottom: 0;
+}
+
+footer .ftr{
+    padding: 2%;
+}
+
+footer .ftr p{
+    font-size: 19px;
+    position: relative;
+    text-align: center;
+}
+
+/* Responsive design - adaptable a dispositivos moviles*/
+
+@media screen and (max-width: 400px){
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

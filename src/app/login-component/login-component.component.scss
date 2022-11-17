@@ -1,15 +1,18 @@
+
 .padre{
-    width: 1000px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     background-color: #71727B;
+    position: relative;
 }
 
 .login{
-    width: 400px;
+    width: 40%;
     height: 400px;
     
     display: flex;
@@ -18,41 +21,61 @@
     flex-wrap: wrap;
     text-align: center;
     background-color: #333440;
-    margin: 50px;
 }
 
 .usuario{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
+
+
+}
+.text_usuario{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .text_usuario h1{
+    width: 100%;
+    height: 100%;
     color: #F1C40F;
     font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .input_usuario{
-    width: 300px;
+    width: 40%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-left: 50px;
-    margin-right: 50px;
     border-radius: 50px;
     text-align: center;
     border: 1px solid #F1C40F;
+
 }
 
-.input_usuario input{
-    width: 300px;
+.input_usuario .input{
+    width: 100%;
     height: 30px;
     border: none;
     border-radius: 50px;
     border: 1px solid #F1C40F;
     outline: none;
-    padding: 18px;
+
+}
+
+.input_usuario .input input{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: none;
 }
 
 .input_usuario:hover{
@@ -60,44 +83,64 @@
 }
 
 .password{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
+
+
 }
+
+.text_password{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .text_password h1{
+    width: 100%;
+    height: 100%;
     color: #F1C40F;
     font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 .input_password{
-    width: 300px;
+    width: 40%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-left: 50px;
-    margin-right: 50px;
     border-radius: 50px;
     text-align: center;
     border: 1px solid #F1C40F;
 }
 
-.input_password input{
-    width: 300px;
+.input_password .input{
+    width: 100%;
     height: 30px;
     border: none;
     border-radius: 50px;
     border: 1px solid #F1C40F;
     outline: none;
-    padding: 18px;
+}
+.input_password .input input{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: none;
 }
 
 .input_password:hover{
     box-shadow: -1px 1px 6px #F1C40F
 }
 .info{
-    width: 400px;
+    width: 50%;
     height: 400px;
     
     display: flex;
@@ -108,10 +151,12 @@
     background-color: #71727B;
     margin: 50px;
 }
-
+.boton_login{
+    width: 100%;
+}
 .boton_login button{
     border-radius: 10px;
-    width: 200px;
+    width: 30%;
     background-color: #F1C40F;
     font-size: 25px;
     font-weight: bold;
@@ -167,4 +212,17 @@
     font-size: 25px;
     font-weight: bold;
     color: #F1C40F;
+}
+
+/* Responsive design - adaptable a dispositivos moviles*/
+
+@media screen and (max-width: 400px){
+    .padre{
+        width: 80%;
+        margin: 10%;
+    }
+    .login{
+        width: 90%;
+        margin: 0;
+    }
 }

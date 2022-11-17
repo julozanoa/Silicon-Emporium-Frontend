@@ -9,7 +9,7 @@
 
       <div class= "input_usuario">
         <div class="input">
-            <input type="text">
+            <input type="text" [(ngModel)]="username">
         </div>
       </div>
 
@@ -21,14 +21,14 @@
         </h1>
       </div>
       <div class= "input_password">
-        <div class="input">
-            <input type="text">
+        <div class="input" >
+            <input type="password" [(ngModel)]="password">
         </div>
       </div>
     </div>
 
     <div class="boton_login">
-      <button mat-raised-button>Login</button>
+      <button mat-raised-button href="" (click)="login()">Login</button>
     </div>
   </div>
   <div class="info">

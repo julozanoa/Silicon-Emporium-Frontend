@@ -11,7 +11,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("./svg/bg.svg");
     margin: 0;
-    display: grid;
+    display: grid;  
     min-height: 100vh;
     grid-template-rows: auto fr auto;
 }

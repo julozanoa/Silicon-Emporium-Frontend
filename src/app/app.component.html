@@ -11,9 +11,13 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="">Home</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li *ngIf="!username"><a href="/login">Login</a></li>
+                    <li *ngIf="username"><a (click)="logout()">logout</a></li>
                     <li><a href="/register">Register</a></li>
                     <li><a href="https://www.paypal.com/donate/?hosted_button_id=S2MHGN49RVBTJ">Donate</a></li>
+                </ul>
+                <ul class="nav-links" *ngIf="username">
+                   <p style="color:aliceblue;" > Username: {{username}} </p>
                 </ul>
             </nav>
         </div>

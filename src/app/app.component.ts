@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './Model';
 
 @Component({
@@ -8,11 +9,14 @@ import { User } from './Model';
 })
 export class AppComponent  implements OnInit{
 
+  constructor(private router: Router) { }
+
+
   username!:any;
 
   ngOnInit(): void {
    this.comprobationLogin()
-   console.log(this.username);
+   console.log("Username:" + this.username);
   }
 
 
@@ -23,6 +27,8 @@ export class AppComponent  implements OnInit{
   logout(){
     localStorage.clear();
     this.ngOnInit()
+    this.router.navigate(['']).then(() => {
+      window.location.reload();})
   }
 
 

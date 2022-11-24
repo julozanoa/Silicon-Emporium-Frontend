@@ -1,48 +1,65 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0">
-</head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Untitled</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+           <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
 
 <body>
-
-    <header class="header">
-        <div class="header-content">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="">Home</a></li>
-                    <li *ngIf="!username"><a href="/login">Login</a></li>
-                    <li *ngIf="username"><a (click)="logout()">logout</a></li>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="https://www.paypal.com/donate/?hosted_button_id=S2MHGN49RVBTJ">Donate</a></li>
-                </ul>
-                <ul class="nav-links" *ngIf="username" style="position:absolute; left:7%;">
-                  <i class="far fa-user fa-2x" style="color:#f1c40f;"></i>
-                   <p style="color: #f1c40f; position: relative; left: -35%;" > Usuario: {{username}}  </p>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <div class="container">.
         <router-outlet></router-outlet>
     </div>
-    <footer>
-
-        <div class="ftr">
-            <p style="margin: 0%;">Hecho con amor by firework team ❤️❤️❤️</p>
-            <div style="position: relative;  padding: 0%;">
-            <p style="  text-align: center; margin: 0;">Redes Sociales:</p>
-            <a href="https://www.facebook.com/Silicon-Emporium-101172692829561" style="padding-left: 1%; ">
-                <i class="fab fa-facebook-f fa-2x" style="color: #3b5998;"></i>
-            </a>
-            <a href="https://twitter.com/SiliconEmporium" style="padding-left: 1%;">
-                <i class="fab fa-twitter fa-2x" style="color: #55acee;"></i>
-            </a>
-            <a href="https://www.instagram.com/silicon_emporium/" style="padding-left: 1%;">
-                <i class="fab fa-instagram fa-2x" style="color: #ac2bac;"></i>
-            </a>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Silicon Emporium</h3>
+                        <p>Proveer una página web de fácil manejo en la que los usuarios puedan realizar la búsqueda de productos relacionados a la computación con la seguridad de que van a encontrar las mejores referencias en cuanto a precio y calidad se reﬁere.</p>
+                    </div>
+                    <div class="col item social"><a href="https://www.facebook.com/Silicon-Emporium-101172692829561"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/SiliconEmporium"><i class="icon ion-social-twitter"></i></a><a href="https://www.instagram.com/silicon_emporium/"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Silicon Emporium © 2022</p>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+      <ul>
+        <li *ngIf="username" style="color: #fff;"> {{username}} </li>
+<li><a href="">Inicio</a></li>
+<li *ngIf="username"><a href="/search">Buscar</a></li>
+<li *ngIf="!username"><a href="/login">Ingresar</a></li>
+<li *ngIf="!username"><a href="/register">Registrarse</a></li>
+<li *ngIf="username" (click)="logout()"><a>Salir</a></li>
+<li><a href="https://www.paypal.com/donate/?hosted_button_id=S2MHGN49RVBTJ">Donar</a></li>
+</ul>
+</div>
+
 </body>

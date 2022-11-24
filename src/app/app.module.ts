@@ -11,12 +11,15 @@ import { RegisterComponentComponent } from './register-component/register-compon
 import { TableComponentComponent } from './table-component/table-component.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const appRoutes:Routes=[
-{path:'', component:HomeComponentComponent},
+{path:'',component:HomepageComponent},
+{path:'search', component:HomeComponentComponent},
 {path:'login', component:LoginComponentComponent},
 {path:'register', component:RegisterComponentComponent},
 {path:'table', component:TableComponentComponent}
@@ -31,6 +34,7 @@ const appRoutes:Routes=[
     HomeComponentComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     MatButtonModule,
     AppRoutingModule,
@@ -40,6 +44,7 @@ const appRoutes:Routes=[
     FormsModule,
     MatTableModule,
     MatIconModule,
+    ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

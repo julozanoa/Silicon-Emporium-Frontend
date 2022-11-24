@@ -12,10 +12,13 @@ import { TableComponentComponent } from './table-component/table-component.compo
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { interceptor } from './interceptor/interceptor';
 
 const appRoutes:Routes=[
 {path:'',component:HomepageComponent},
@@ -31,7 +34,7 @@ const appRoutes:Routes=[
     LoginComponentComponent,
     RegisterComponentComponent,
     TableComponentComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -44,10 +47,21 @@ const appRoutes:Routes=[
     FormsModule,
     MatTableModule,
     MatIconModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
     ModalModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: interceptor,
+      multi: true,
+    },
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

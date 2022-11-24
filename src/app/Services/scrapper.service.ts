@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ScrapperService {
 
-  private projectServiceURL = `http://localhost:8080/search`;
+  private projectServiceURL = `https://api-silicon-emporium.onrender.com/search/query?keywords=`;
 
   constructor(private http: HttpClient) { }
 

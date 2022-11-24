@@ -8,7 +8,7 @@ import { Login, User } from '../Model';
 })
 export class RegisterService {
 
-  private projectServiceURL = `http://localhost:8080`;
+  private projectServiceURL = `https://api-silicon-emporium.onrender.com`;
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,7 @@ export class RegisterService {
 
 
   login(user: Login): Observable<String> {
+    console.log(user)
     return this.http.post<String>(
       `${this.projectServiceURL}/auth/login`,
       user

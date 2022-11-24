@@ -1,289 +1,86 @@
 
-.container{
-    background-color: green;
-width: 100%;
-height: 100%;
+
+.loginBox{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 590px;
+    padding: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10%;
 }
-.padre{
+
+.user{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+}
+
+h2{
+    margin: 0;
+    padding: 10px 0 20px;
+    color: #000;
+    text-align: center;
+}
+
+.loginBox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.loginBox input{
     width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #71727B;
+    margin-bottom: 20px;
 }
 
-.info{
-    width: 50%;
-    height: 650px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: #333440;
-}
-
-.nombre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.text_nombre h1{
-    color: #F1C40F;
-    font-weight: bold;
-}
-.input_nombre{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 50px;
-    text-align: center;
-    border: 1px solid #F1C40F;
-}
-
-.input_nombre input{
-    width: 300px;
-    height: 30px;
+.loginBox input[type="text"],
+.loginBox input[type="password"]{
     border: none;
-    border-radius: 50px;
-    border: 1px solid #F1C40F;
+    border-bottom: 1px solid #000;
+    background: transparent;
     outline: none;
-    padding: 18px;
+    height: 40px;
+    color: #000;
+    font-size: 16px;
 }
 
-.input_nombre:hover{
-    box-shadow: -1px 1px 6px #F1C40F
-}
-//
-.apellido{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.text_apellido h1{
-    color: #F1C40F;
-    font-weight: bold;
-}
-.input_apellido{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 50px;
-    text-align: center;
-    border: 1px solid #F1C40F;
+::placeholder{
+    color: rgba(255,255,255,.5);
 }
 
-.input_apellido input{
-    width: 300px;
-    height: 30px;
+
+.loginBox input[type="submit"]{
     border: none;
-    border-radius: 50px;
-    border: 1px solid #F1C40F;
     outline: none;
-    padding: 18px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: #ff267e;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-.input_apellido:hover{
-    box-shadow: -1px 1px 6px #F1C40F
+.loginBox input[type="submit"]:hover{
+    background: #efed40;
+    color: #262626;
 }
-//
-.correo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.text_correo h1{
-    color: #F1C40F;
+
+.loginBox a{
+    color: #fff;
+    font-size: 14px;
     font-weight: bold;
+    text-decoration: none;
 }
-.input_correo{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 50px;
-    text-align: center;
-    border: 1px solid #F1C40F;
-}
-
-.input_correo input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 50px;
-    border: 1px solid #F1C40F;
-    outline: none;
-    padding: 18px;
-}
-
-.input_correo:hover{
-    box-shadow: -1px 1px 6px #F1C40F
-}
-//
-.password{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.text_password h1{
-    color: #F1C40F;
-    font-weight: bold;
-}
-.input_password{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 50px;
-    text-align: center;
-    border: 1px solid #F1C40F;
-}
-
-.input_password input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 50px;
-    border: 1px solid #F1C40F;
-    outline: none;
-    padding: 18px;
-}
-
-.input_password:hover{
-    box-shadow: -1px 1px 6px #F1C40F
-}
-//
-.confirm_password{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-.text_confirm_password h1{
-    color: #F1C40F;
-    font-weight: bold;
-}
-.input_confirm_password{
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 50px;
-    margin-right: 50px;
-    border-radius: 50px;
-    text-align: center;
-    border: 1px solid #F1C40F;
-}
-
-.input_confirm_password input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 50px;
-    border: 1px solid #F1C40F;
-    outline: none;
-    padding: 18px;
-}
-
-.input_confirm_password:hover{
-    box-shadow: -1px 1px 6px #F1C40F
-}
-.text{
-    width: 400px;
-    height: 400px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: #71727B;
-    margin: 50px;
-}
-
-.boton_register button{
-    border-radius: 10px;
-    width: 200px;
-    background-color: #F1C40F;
-    font-size: 25px;
-    font-weight: bold;
-    color: #333440;
-}
-.boton_register :hover{
-    box-shadow: -1px 1px 6px #F1C40F;
-    border-radius: 10px;
-}
-
-.text{
-    width: 50%;
-    margin: 0;
-}
-.listo{
-    width: 500px;
-}
-.logo{
-    width: 330px;
-}
-.account{
-    width: 300px;
-}
-.register{
-    width: 300px;
-    display: flex;
-    justify-content: center;
-}
-
-.account h1{
-    color: #F1C40F;
-    font-weight: bold;
-}
-
-
-.logo img{
-    width: 200px;
-}
-
-.listo h1{
-    font-size: 40px;
-    font-weight: bold;
-    color: #F1C40F;
-}
-
-.login nav ul li a{
-    font-size: 13px;
-    color: #F1C40F;
-    display: flex;
-}
-
-.login nav ul li:nth-child(1) a{
-    font-size: 25px;
-    font-weight: bold;
-    color: #F1C40F;
+.sumbit{
+    border-radius: 9px;
 }

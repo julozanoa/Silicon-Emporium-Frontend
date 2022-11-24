@@ -1,102 +1,40 @@
-<div class="padre">
-        <div class="info">
-
-            <div class="nombre">
-                <div class="text_nombre">
-                    <h1>
-                        Nombre                
-                    </h1>
-                </div>
-                <div class= "input_nombre">
-                        <div class="input">
-                            <input type="text" [(ngModel)]="user!.name">
-                        </div>
-               </div>
-            </div>
-
-            <div class="apellido">
-                <div class="text_apellido">
-                    <h1>
-                        Apellido                
-                    </h1>
-                </div>
-                <div class= "input_apellido">
-                    <div class="input">
-                        <input type="text" [(ngModel)]="user!.surname">
-                    </div>
-                </div>
-            </div>
-
-            <div class="correo">
-                <div class="text_correo">
-                    <h1>
-                        Correo                
-                    </h1>
-                </div>
-                <div class= "input_correo">
-                    <div class="input">
-                        <input type="text" [(ngModel)]="user!.username">
-                    </div>
-                </div>
-            </div>
-
-            <div class="password">
-                <div class="text_password">
-                   <h1>
-                      Contraseña               
-                   </h1>
-                </div>
-                <div class= "input_password">
-                    <div class="input">
-                        <input type="password" [(ngModel)]="user!.password">
-                    </div>
-                </div>
-            </div>
+<div class="loginBox">
+    <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" class="user">
+    <h2>Registrarse</h2>
   
-            <div class="confirm_password">
-                <div class="text_confirm_password">
-                    <h1>
-                        Confirma tu Contraseña                
-                    </h1>
-                </div>
-                <div class= "input_confirm_password">
-                    <div class="input">
-                        <input type="password" [(ngModel)]="password">
-                    </div>
-                </div>
-            </div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="register"> 
 
-            <div class="boton_register">
-                <button (click)="passwordComprobation()" mat-raised-button>Registrate</button>
-            </div>
+    <div>
+        <label for="names">Nombre</label>
+        <input type="text" id="names" name="names" required formControlName="names">
+        <div *ngIf="register.get('names')?.invalid && register.get('names')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
+      
+      <div>
+        <label for="surnames">Apellidos</label>
+        <input type="text" id="surnames" name="surnames" required formControlName="surnames">
+        <div *ngIf="register.get('surnames')?.invalid && register.get('surnames')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
+      <div>
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" required formControlName="username">
+        <div *ngIf="register.get('username')?.invalid && register.get('username')?.touched" style="color:brown ;">
+            Este campo es requerido
         </div>
+      </div>
+      <div>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required formControlName="password">
+        <div *ngIf="register.get('password')?.invalid && register.get('password')?.touched" style="color:brown ;">
+          Este campo es requerido
+      </div>
+      </div>
 
-        <div class="text">
-            <div class="listo">
-                <h1>
-                    ¿Listo para empezar?
-                </h1>
-            </div>
-            <div class="logo">
-                <img src="./assets/logo.png">
-            </div>
-            <div>
-                <br/>
-            </div>
-            <div class="account">
-                <h1>
-                    ¿Ya tienes cuenta?
-                </h1>
-            </div>
-            <div class="login">
-                <nav class="navbar navbar-expand-sm-bg-light">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/login">Logueate</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-</div>
-
-
+  <button class="sumbit" type="submit"  class="btn btn-dark"  [disabled]="register.invalid">Ingresar</button>
   
+  </form>
+  </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../Model';
 import { RegisterService } from '../Services/register.service';
 
@@ -9,47 +11,37 @@ import { RegisterService } from '../Services/register.service';
 })
 export class RegisterComponentComponent implements OnInit {
 
-  user: User = {
-    username: '',
-    password: '',
-    name: '',
-    surname: ''
-  }
   
-  password!:string;
+  constructor( private registerService: RegisterService,private fb: FormBuilder,private router: Router) { }
 
-  constructor( private registerService: RegisterService) { }
+  register!:FormGroup;
+  user!:User
 
   ngOnInit(): void {
-  
+  this.register = this.initForm();
   }
 
-  createUser(){
-    console.log(this.user)
-  }
+  initForm():FormGroup{
+    return this.fb.group({
+       username:['',[Validators.required,Validators.minLength(5)]],
+       password:['',[Validators.required,Validators.minLength(5)]],
+       names:['',[Validators.required,Validators.minLength(5)]],
+       surnames:['',[Validators.required,Validators.minLength(5)]]
+     });
+   }
 
  
-  passwordComprobation():boolean{
-  if(this.mailComprobation() == true){
-    if(this.user.password != this.password){
-      window.alert("Las Contraseñas no son iguales")
-      return true;
-    } else {
-      console.log(this.user)
-      return false;
-    }
-  } else{
-    return false;
+   onSubmit():void{
+    this.user = this.register.value
+    this.registerService.create(this.user).subscribe(  res =>{
+        window.alert("Usuario Registrado")
+        this.router.navigate(['']).then(() => {
+          window.location.reload();})
+      
+  },
+  err => {
+      window.alert(["Usuario ya registrado"])
+  })
   }
-  }
+ }
 
-  mailComprobation():boolean{
-    if( this.user.username.match("@") == null){
-      window.alert("Ingrese un correo Valido")
-      return false
-    } else{
-      return true
-    }
-  }
-
-}

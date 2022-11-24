@@ -17,8 +17,11 @@ import { MatTableModule } from '@angular/material/table';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { interceptor } from './interceptor/interceptor';
+import { TermAndConditionsComponent } from './register-component/TermAndConditions/term-and-conditions/term-and-conditions.component';
 
 const appRoutes:Routes=[
 {path:'',component:HomepageComponent},
@@ -35,6 +38,7 @@ const appRoutes:Routes=[
     RegisterComponentComponent,
     TableComponentComponent,
     HomeComponentComponent,
+    TermAndConditionsComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -49,6 +53,7 @@ const appRoutes:Routes=[
     MatIconModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    MatDialogModule,
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../Model';
 import { RegisterService } from '../Services/register.service';
+import {MatDialog} from '@angular/material/dialog';
+import { TermAndConditionsComponent } from './TermAndConditions/term-and-conditions/term-and-conditions.component';
 
 @Component({
   selector: 'app-register-component',
@@ -12,7 +14,11 @@ import { RegisterService } from '../Services/register.service';
 export class RegisterComponentComponent implements OnInit {
 
   
-  constructor( private registerService: RegisterService,private fb: FormBuilder,private router: Router) { }
+  constructor( private registerService: RegisterService,
+    private fb: FormBuilder,
+    private router: Router,
+    public dialog: MatDialog
+    ) { }
 
   register!:FormGroup;
   user!:User
@@ -43,5 +49,18 @@ export class RegisterComponentComponent implements OnInit {
       window.alert(["Usuario ya registrado"])
   })
   }
- }
+
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(TermAndConditionsComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+}
+
+
+ 
 

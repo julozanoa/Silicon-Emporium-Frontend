@@ -33,7 +33,10 @@
           Este campo es requerido
       </div>
       </div>
-
+      <div>
+        <label for="term" style=" cursor:pointer;" (click)="openDialog()">Aceptar Terminos y Condiciones</label>
+        <input type="checkbox" id="term" name="term" required formControlName="term">
+      </div>
   <button class="sumbit" type="submit"  class="btn btn-dark"  [disabled]="register.invalid">Ingresar</button>
   
   </form>

@@ -27,10 +27,12 @@ export class HomeComponentComponent implements OnInit {
   }
 
   loadProducts(): void {
+
     this.scrapperService
       .getAllItems(this.itemSearch)
       .subscribe((pdtProducts) => {
         this.items = pdtProducts;
+        console.log(this.items)
       });
   }
 

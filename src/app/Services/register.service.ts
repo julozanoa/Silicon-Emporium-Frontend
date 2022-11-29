@@ -8,7 +8,7 @@ import { Login, User } from '../Model';
 })
 export class RegisterService {
 
-  private projectServiceURL = `https://api-silicon-emporium.onrender.com`;
+  private projectServiceURL = `https://api-silicon-emporium.l80pptdp5a7ji.us-east-2.cs.amazonlightsail.com`;
 
   constructor(private http: HttpClient) { }
 

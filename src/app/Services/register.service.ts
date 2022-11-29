@@ -12,8 +12,8 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  create(user: User): Observable<User> {
-    return this.http.post<User>(
+  create(user: User): Observable<String> {
+    return this.http.post<String>(
       `${this.projectServiceURL}/auth/register`,
       user
     );
@@ -21,12 +21,20 @@ export class RegisterService {
 
 
   login(user: Login): Observable<String> {
-    console.log(user)
     return this.http.post<String>(
       `${this.projectServiceURL}/auth/login`,
       user
     );
   }
+
+  
+  recoverpassword(user: Login): Observable<String> {
+    return this.http.put<String>(
+      `${this.projectServiceURL}/auth/reset`,
+      user
+    );
+  }
+
 
 
 }

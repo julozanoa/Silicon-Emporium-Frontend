@@ -38,16 +38,17 @@ export class RegisterComponentComponent implements OnInit {
 
  
    onSubmit():void{
-    this.user = this.register.value
-    this.registerService.create(this.user).subscribe(  res =>{
-        window.alert("Usuario Registrado")
-        this.router.navigate(['']).then(() => {
-          window.location.reload();})
-      
-  },
-  err => {
-      window.alert(["Usuario ya registrado"])
-  })
+
+  this.user = this.register.value
+  this.registerService.create(this.user).subscribe(  res =>{
+    window.alert(["Registro Exitoso"])
+    this.router.navigate(['']).then(() => {
+      window.location.reload();}) 
+},
+err => {
+  window.alert(["Usuario ya registrado"])
+})
+
   }
 
 

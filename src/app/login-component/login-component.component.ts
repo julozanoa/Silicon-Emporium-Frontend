@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Login } from '../Model';
 import { RegisterService } from '../Services/register.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TermAndConditionsComponent } from '../register-component/TermAndConditions/term-and-conditions/term-and-conditions.component';
+import { MatDialog } from '@angular/material/dialog';
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 @Component({
   selector: 'app-login-component',
@@ -15,7 +18,7 @@ export class LoginComponentComponent implements OnInit {
 
   user!:FormGroup;
   login!:Login
-  constructor(private router: Router,private registerService: RegisterService,private fb: FormBuilder) { }
+  constructor(private router: Router,private registerService: RegisterService,private fb: FormBuilder,   public dialog: MatDialog) { }
 
 
 
@@ -49,6 +52,13 @@ export class LoginComponentComponent implements OnInit {
     });
   }
 
-
   
+  openDialog() {
+    const dialogRef = this.dialog.open(RecoverPasswordComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+

@@ -31,11 +31,12 @@
                         </h1>
                 </article>
 
+
                 <article class="search" style="padding-top: 60px;">
                         <div class="search__box">
-                            <input type="text" [(ngModel)]="itemSearch" placeholder=' E.g: "Intel Core i7 12th gen" '>
+                            <input type="text" [(ngModel)]="itemSearch" name="search" placeholder=' E.g: "Intel Core i7 12th gen" '>
                         </div>
-                        <button class="btn" mat-raised-button (click)="loadProducts()" style="margin:5% ;"> Buscar</button>
+                        <button class="btn" mat-raised-button (click)="loadProducts()" style="margin:5% ;"  [disabled]=" 1 > itemSearch.length"> Buscar</button>
                 </article>          
 
         </section>

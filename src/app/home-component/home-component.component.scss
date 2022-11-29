@@ -1,7 +1,15 @@
 
 .font1{
-    font-family: 'Russo One', sans-serif;
+  //  font-family: 'Russo One', sans-serif;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+  }
 
 .container{
     width: 100%;

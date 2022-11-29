@@ -22,13 +22,16 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { interceptor } from './interceptor/interceptor';
 import { TermAndConditionsComponent } from './register-component/TermAndConditions/term-and-conditions/term-and-conditions.component';
+import { RecoverPasswordComponent } from './login-component/recover-password/recover-password.component';
+import { TeamInfoComponent } from './team-info/team-info.component';
 
 const appRoutes:Routes=[
 {path:'',component:HomepageComponent},
 {path:'search', component:HomeComponentComponent},
 {path:'login', component:LoginComponentComponent},
 {path:'register', component:RegisterComponentComponent},
-{path:'table', component:TableComponentComponent}
+{path:'table', component:TableComponentComponent},
+{path:'team', component:TeamInfoComponent}
 ];
 
 @NgModule({
@@ -39,6 +42,8 @@ const appRoutes:Routes=[
     TableComponentComponent,
     HomeComponentComponent,
     TermAndConditionsComponent,
+    RecoverPasswordComponent,
+    TeamInfoComponent,
   ],
   imports: [
     ReactiveFormsModule,

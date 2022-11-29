@@ -1,6 +1,6 @@
 export interface item {
     title:string;
-    price:string;
+    price:number;
     source:string;
   }
 

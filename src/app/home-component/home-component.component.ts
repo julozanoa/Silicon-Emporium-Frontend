@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { item } from '../Model';
 import { ScrapperService } from '../Services/scrapper.service';
 import {MatTableModule} from '@angular/material/table';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-home-component',
@@ -12,6 +13,7 @@ export class HomeComponentComponent implements OnInit {
 
   itemSearch!:string;
   items!: item[];
+  sortedColumn$ = new BehaviorSubject<string>('');
 
   constructor(
     private scrapperService: ScrapperService,
@@ -36,5 +38,7 @@ export class HomeComponentComponent implements OnInit {
       });
   }
 
-
+  sortOn() {
+   this.items.sort((a, b) => a.price - b.price);
+  }
 }

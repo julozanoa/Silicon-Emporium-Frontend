@@ -2,6 +2,7 @@ export interface item {
     title:string;
     price:number;
     source:string;
+    site:string;
   }
 
   export interface User {

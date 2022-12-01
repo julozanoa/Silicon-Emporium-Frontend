@@ -47,6 +47,7 @@
             <thead>
                 <tr style="text-align:center; position: static; ">
                     <th scope="col">Producto</th>
+                    <th scope="col">Sitio</th>
                     <th scope="col" style="cursor: pointer;" (click)="sortOn()" >
                         <i class='fas fa-angle-double-down'>fa-angle-double-down</i>
                  <a>  Precio </a>
@@ -59,6 +60,7 @@
                 <tr *ngFor="let data of items">
         
                     <td>{{data.title}}</td>
+                    <td>{{data.site}}</td>
                     <td>{{data.price | currency}}</td>
                     <a href="{{data.source}}" class="btn" mat-raised-button style="margin:5% ;" class="btn btn-info" role="button" >Adquirir</a>
                 </tr>

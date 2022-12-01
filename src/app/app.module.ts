@@ -18,12 +18,13 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { interceptor } from './interceptor/interceptor';
 import { TermAndConditionsComponent } from './register-component/TermAndConditions/term-and-conditions/term-and-conditions.component';
 import { RecoverPasswordComponent } from './login-component/recover-password/recover-password.component';
 import { TeamInfoComponent } from './team-info/team-info.component';
+import { FYQComponent } from './fyq/fyq.component';
 
 const appRoutes:Routes=[
 {path:'',component:HomepageComponent},
@@ -31,6 +32,7 @@ const appRoutes:Routes=[
 {path:'login', component:LoginComponentComponent},
 {path:'register', component:RegisterComponentComponent},
 {path:'table', component:TableComponentComponent},
+{path:'fyq', component:FYQComponent},
 {path:'team', component:TeamInfoComponent}
 ];
 
@@ -44,6 +46,7 @@ const appRoutes:Routes=[
     TermAndConditionsComponent,
     RecoverPasswordComponent,
     TeamInfoComponent,
+    FYQComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -58,6 +61,7 @@ const appRoutes:Routes=[
     MatIconModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    MatExpansionModule,
     MatDialogModule,
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes),

@@ -1,0 +1,111 @@
+<p class="popout">
+	<span>F</span>
+	<span>&</span>
+	<span>Q</span>
+  <br>
+	
+</p>
+
+
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Cómo puedo empezar a buscar productos?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Primero se debe contar con una cuenta en la pagina y despues de ingresar se habilitara el panel de busqueda. <a href="/register">Registrarse</a></p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿A quién va dirigida la página?
+        </mat-panel-title>
+        <mat-panel-description>
+          Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Primero al cliente, luego y más importante a todos los usuarios que quieran adquirir alguno de los productos ofertados.</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Cómo puedo Recuperar mi contraseña?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Para poder recuperar tu contraseña puedes acceder a el panel de ingreso. <a href="/login">Recuperar	contraseña</a></p>
+    </mat-expansion-panel>  
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿No encuentro el producto?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Ingresa el tipo y version de el producto para que la busqueda sea más especializada <a href="/search">Buscar</a></p>
+    </mat-expansion-panel>  
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Por qué tengo problemas en ver los productos buscados?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Ingresa con el navegador Chrome , Opera, Explorer edge y verifica nuevamente. <a href="/search">Buscar</a></p>
+    </mat-expansion-panel>  
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Cómo protegemos a los compradores?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Las paginas a la cuales se remite al usuario son paginas calificadas como seguras.<a href="/search">Buscar</a></p>
+    </mat-expansion-panel>  
+
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Cómo puedo ofrecer mi comercio en la pagina web?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Contactanos y se realizara el respectivo analisis para verificar que puedas aparecer en nuestra pagina web.<a href="/team">Equipo</a></p>
+    </mat-expansion-panel>  
+
+    
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ¿Cómo puedo publicitar en la pagina?
+        </mat-panel-title>
+        <mat-panel-description>
+         Pregunta
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Contactanos y se realizara el respectivo analisis para verificar que el contenido es apto.<a href="/team">Equipo</a></p>
+    </mat-expansion-panel>  
+
+
+
+  </mat-accordion>
